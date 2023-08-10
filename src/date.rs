@@ -57,6 +57,7 @@ use crate::{Datelike, Weekday};
 #[deprecated(since = "0.4.23", note = "Use `NaiveDate` or `DateTime<Tz>` instead")]
 #[derive(Clone)]
 #[cfg_attr(feature = "rkyv", derive(Archive, Deserialize, Serialize))]
+#[cfg_attr(feature = "rkyv-validation", archive(check_bytes))]
 pub struct Date<Tz: TimeZone> {
     date: NaiveDate,
     offset: Tz::Offset,
