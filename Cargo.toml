@@ -28,6 +28,9 @@ unstable-locales = ["pure-rust-locales", "alloc"]
 __internal_bench = ["criterion"]
 __doctest = []
 
+rkyv = ["dep:rkyv"]
+rkyv-validation = ["dep:rkyv", "rkyv/alloc", "rkyv/validation"]
+
 [dependencies]
 time = { version = "0.1.43", optional = true }
 num-traits = { version = "0.2", default-features = false }
